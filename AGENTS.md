@@ -90,7 +90,7 @@ crates/macos/    agent-desktop-macos: AX API
 crates/windows/  agent-desktop-windows: UI Automation
 crates/linux/    agent-desktop-linux: AT-SPI
 crates/ffi/      agent-desktop-ffi: cdylib and the committed C header include/agent_desktop.h
-src/             agent-desktop binary: cli/, cli_args/, dispatch/, batch/, command_policy/, command_host/,
+src/             agent-desktop binary: cli/, cli_args/, dispatch/, batch/, command_policy/,
                  diagnostic/, visual_debug/
 skills/          agent skills, compiled into the binary
 tests/           golden fixtures, E2E harness per OS, FFI smoke tests

@@ -33,7 +33,7 @@ CORE_DOMAINS = {"actionability", "actions", "adapter", "commands", "context", "c
                 "locator", "notifications", "ref_action", "refs", "response", "session", "snapshot",
                 "storage", "system", "trace", "tree", "wait"}
 BINARY_TOP_FILES = {"main.rs", "Cargo.toml"}
-BINARY_DIRS = {"batch", "cli", "cli_args", "command_host", "command_policy", "diagnostic", "dispatch",
+BINARY_DIRS = {"batch", "cli", "cli_args", "command_policy", "diagnostic", "dispatch",
                "tests", "visual_debug"}
 CAPABILITY_HOMES = {
     "PlatformAdapter": ("adapter.rs",),
@@ -474,7 +474,7 @@ CLEAN = {
     "crates/ffi/src/lib.rs": "\n",
     "src/Cargo.toml": '[package]\nname = "agent-desktop"\nversion = "0.0.0"\nedition = "2021"\n[[bin]]\nname = "agent-desktop"\npath = "main.rs"\n'
                       '[target.\'cfg(target_os = "linux")\'.dependencies]\nagent-desktop-linux = { path = "../crates/linux" }\n',
-    "src/main.rs": "mod batch;\nmod cli;\nmod cli_args;\nmod command_host;\nmod command_policy;\nmod diagnostic;\nmod dispatch;\n"
+    "src/main.rs": "mod batch;\nmod cli;\nmod cli_args;\nmod command_policy;\nmod diagnostic;\nmod dispatch;\n"
                    "mod visual_debug;\n#[cfg(test)]\n#[path = \"tests/main_tests.rs\"]\nmod main_tests;\nfn main() {}\n",
     "src/tests/main_tests.rs": "\n",
 }

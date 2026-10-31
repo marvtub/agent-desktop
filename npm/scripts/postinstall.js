@@ -183,6 +183,9 @@ function isNodeWrapper(path) {
   }
 }
 
+const RESTART_NOTICE =
+  'Upgrading from 0.10.0 or later on macOS is not complete until you restart the Mac. A command host from the old version can stay reachable until then.';
+
 const LINKED_NOTICE = 'Native binary linked: each call runs without the Node launcher.';
 
 function linkBinEntry(directory, binaryName, osPlatform = platform()) {
@@ -271,6 +274,10 @@ function main() {
     log(`Released platform keys today: ${releasedKeys().join(', ')}.`);
     log(`See: https://github.com/${GITHUB_REPO}`);
     return;
+  }
+
+  if (platform() === 'darwin') {
+    log(RESTART_NOTICE);
   }
 
   const [helperName] = helperNames(entry);

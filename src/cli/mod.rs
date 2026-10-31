@@ -259,13 +259,6 @@ impl Commands {
         self.metadata().post_action_wait
     }
 
-    #[cfg(target_os = "macos")]
-    /// Permission guidance needs the caller; session management crosses host namespaces.
-    pub(crate) fn needs_caller_process(&self) -> bool {
-        matches!(self, Self::Session(_) | Self::Batch(_))
-            || matches!(self, Self::Permissions(args) if args.guide)
-    }
-
     pub(crate) fn is_mutating(&self) -> bool {
         match self {
             Self::Click(_)

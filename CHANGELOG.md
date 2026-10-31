@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+### Bug Fixes
+
+* Remove the macOS command host. Every CLI call and every batch item now runs in the calling process, so no other app can borrow the privacy permissions granted to the app that launched agent-desktop.
+* Restart the Mac after upgrading from 0.10.0 or later. The upgrade is not complete until then, because a command host from the old version can stay reachable.
+* Retake snapshots taken before the upgrade. Refs from them fail with `STALE_REF`, because the retained objects they pointed to no longer exist.
+* Check permissions in the process that runs each command. macOS reads permission state per process, so a permission granted during a batch applies from the next CLI call, not to later items in the same batch.
+
 ## [1.0.2](https://github.com/vercel-labs/agent-desktop/compare/v1.0.1...v1.0.2) (2026-10-30)
 
 ### Features

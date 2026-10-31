@@ -536,6 +536,7 @@ test('postinstall links the bin entry of an installed package to the native bina
     const { code, stderr } = await runScriptWithOsStub(join(root, 'scripts', 'postinstall.js'), 'darwin', 'arm64');
     assert.equal(code, 0, stderr);
     assert.match(stderr, /Native binary linked: each call runs without the Node launcher/);
+    assert.match(stderr, /not complete until you restart the Mac/);
   } finally {
     delete process.env.AGENT_DESKTOP_BINARY_PATH;
   }

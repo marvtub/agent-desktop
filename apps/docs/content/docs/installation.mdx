@@ -13,6 +13,10 @@ agent-desktop version            # confirm the command resolves
 
 Without `-g`, the command lands in `./node_modules/.bin` instead of on your PATH. Run it with `npx agent-desktop`, or install globally.
 
+## Upgrading on macOS
+
+Upgrading from 0.10.0 or later is not complete until you restart the Mac. The old version could leave a command host running, and it stays reachable until the restart. Snapshots taken before the upgrade also need to be retaken: their refs fail with `STALE_REF`.
+
 ## What the package contains
 
 The package carries native CLI executables for six targets, plus the helper each platform needs:
