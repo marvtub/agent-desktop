@@ -86,7 +86,7 @@ helper that returns a bare `@eN`.
 | `scenarios/error_contract.sh` | Exit code and `error.code` envelopes an agent branches on, `batch` continue/stop/reject semantics |
 | `scenarios/keyboard.sh` | `press` key combos observed through the fixture's own text readout, blocked-combo and unknown-modifier refusals |
 | `scenarios/trace_performance.sh` | Trace artifacts, redaction, timings, cleanup |
-| `scenarios/ref_churn.sh` | `STALE_REF` after the UI really changes, on a dedicated fixture process (`AGENT_DESKTOP_FIXTURE_REF_CHURN=1`), with and without the opt-in command host |
+| `scenarios/ref_churn.sh` | `STALE_REF` after the UI really changes, on a dedicated fixture process (`AGENT_DESKTOP_FIXTURE_REF_CHURN=1`) |
 | `scenarios/notifications.sh` | Real Notification Center lifecycle |
 | `permission-contract.sh` | Deterministic AE5 mapping tests without mutating TCC |
 | `electron-live.sh`, `electron_metrics*.py` | Opt-in installed Electron/Chromium app measurement |
